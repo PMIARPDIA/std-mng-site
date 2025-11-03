@@ -2,7 +2,7 @@ import os
 import json
 import random
 
-FILE_NAME = "users.js"
+FILE_NAME = "users.json"
 
 def load_users():
     if not os.path.exists(FILE_NAME):
@@ -15,7 +15,6 @@ def load_users():
 
 def save_users(users):
     with open(FILE_NAME, "w", encoding="utf-8") as f:
-        f.write("let data = ")
         json.dump(users, f, ensure_ascii=False, indent=4)
 
 def generate_id(users):
